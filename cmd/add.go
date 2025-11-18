@@ -11,8 +11,8 @@ import (
 // addCmd represents the add command
 var addCmd = &cobra.Command{
 	Use:   "add",
-	Short: "Add a new todo",
-	Long:  `Add will create a new todo item to the list`,
+	Short: "Add a new tdo",
+	Long:  `Add will create a new tdo item to the list`,
 	Run:   addRun,
 }
 
