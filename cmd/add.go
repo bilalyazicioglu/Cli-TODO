@@ -4,8 +4,10 @@ Copyright © 2025 NAME HERE <EMAIL ADDRESS>
 package cmd
 
 import (
+	"cobra-cli/todo"
 	"fmt"
 	"github.com/spf13/cobra"
+	"log"
 )
 
 // addCmd represents the add command
@@ -15,14 +17,27 @@ var addCmd = &cobra.Command{
 	Long:  `Add will create a new tdo item to the list`,
 	Run:   addRun,
 }
+var priority int
 
 func addRun(cmd *cobra.Command, args []string) {
+	items, err := todo.ReadItems(dataFile)
+	if err != nil {
+		log.Printf("%v", err)
+	}
 	for _, x := range args {
-		fmt.Println(x)
+		item := todo.Item{Text: x}
+		item.SetPriority(priority)
+		items = append(items, item)
+	}
+	err = todo.SaveItems(dataFile, items)
+	if err != nil {
+		fmt.Errorf("%v", err)
 	}
 }
 func init() {
 	rootCmd.AddCommand(addCmd)
+
+	addCmd.Flags().IntVarP(&priority, "priority", "p", 2, "Priority:1,2,3")
 
 	// Here you will define your flags and configuration settings.
 
