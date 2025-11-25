@@ -1,6 +1,4 @@
-/*
-Copyright © 2025 NAME HERE <EMAIL ADDRESS>
-*/
+// TODO maddelerini tamamlandı olarak işaretlemek için `done` komutu.
 package cmd
 
 import (

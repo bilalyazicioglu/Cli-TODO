@@ -1,7 +1,4 @@
-/*
-Copyright © 2025 NAME HERE <EMAIL ADDRESS>
-
-*/
+// Cli-TODO uygulamasının giriş noktası.
 package main
 
 import "cobra-cli/cmd"

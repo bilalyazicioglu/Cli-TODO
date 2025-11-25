@@ -1,6 +1,4 @@
-/*
-Copyright © 2025 NAME HERE <EMAIL ADDRESS>
-*/
+// Uygulamanın kök (root) komutu ve global ayarları.
 package cmd
 
 import (

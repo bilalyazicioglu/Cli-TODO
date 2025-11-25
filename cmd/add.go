@@ -1,6 +1,4 @@
-/*
-Copyright © 2025 NAME HERE <EMAIL ADDRESS>
-*/
+// Yeni TODO maddesi eklemek için `add` komutu.
 package cmd
 
 import (

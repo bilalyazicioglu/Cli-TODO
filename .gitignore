@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# IDE / Editor
+.idea/
+.vscode/
+
+# Go build çıktıları
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Proje binary'leri
+tdo
+cobra-cli
+
+# Uygulama veri dosyası (kişisel veriler)
+.tridos.json
