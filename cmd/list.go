@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"github.com/spf13/cobra"
 	"os"
-	"strconv"
+	"sort"
 	"text/tabwriter"
 )
 
@@ -31,9 +31,10 @@ func listRun(cmd *cobra.Command, args []string) {
 		fmt.Printf("Error reading items: %v\n", err)
 		return
 	}
+	sort.Sort(todo.ByPriority(items))
 	w := tabwriter.NewWriter(os.Stdout, 3, 0, 1, ' ', 0)
 	for _, i := range items {
-		fmt.Fprintln(w, strconv.Itoa(i.Priority)+"\t"+i.Text+"\t")
+		fmt.Fprintln(w, i.Label()+"\t"+i.PrettyDone()+"\t"+i.Text+"\t")
 	}
 	w.Flush()
 }

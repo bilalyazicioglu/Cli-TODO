@@ -9,6 +9,7 @@ import (
 	"github.com/spf13/cobra"
 	"log"
 	"os"
+	"path/filepath"
 )
 
 var dataFile string
@@ -51,5 +52,17 @@ func init() {
 	if err != nil {
 		log.Println("Unable to detect home directory. Please set data file using --datafile.")
 	}
-	rootCmd.PersistentFlags().StringVar(&dataFile, "datafile", home+string(os.PathSeparator)+".tridos.json", "data file location")
+
+	// Varsayılan dosya: home dizinindeki .tridos.json
+	defaultFile := filepath.Join(home, ".tridos.json")
+
+	// çalışılan dizinde .tridos.json varsa onu tercih et
+	if cwd, err := os.Getwd(); err == nil {
+		cwdFile := filepath.Join(cwd, ".tridos.json")
+		if _, err := os.Stat(cwdFile); err == nil {
+			defaultFile = cwdFile
+		}
+	}
+
+	rootCmd.PersistentFlags().StringVar(&dataFile, "datafile", defaultFile, "data file location")
 }
