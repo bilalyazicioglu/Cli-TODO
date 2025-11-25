@@ -60,10 +60,13 @@ type ByPriority []Item
 func (a ByPriority) Len() int      { return len(a) }
 func (a ByPriority) Swap(i, j int) { a[i], a[j] = a[j], a[i] }
 func (a ByPriority) Less(i, j int) bool {
-	if a[i].Priority == a[j].Priority {
-		return a[i].position < a[j].position
+	if a[i].Done != a[j].Done {
+		return a[i].Done
 	}
-	return a[i].Priority < a[j].Priority
+	if a[i].Priority != a[j].Priority {
+		return a[i].Priority < a[j].Priority
+	}
+	return a[i].position < a[j].position
 }
 
 func (i *Item) PrettyDone() string {
