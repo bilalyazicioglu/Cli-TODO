@@ -51,10 +51,7 @@ func init() {
 		log.Println("Unable to detect home directory. Please set data file using --datafile.")
 	}
 
-	// Varsayılan dosya: home dizinindeki .tridos.json
 	defaultFile := filepath.Join(home, ".tridos.json")
-
-	// çalışılan dizinde .tridos.json varsa onu tercih et
 	if cwd, err := os.Getwd(); err == nil {
 		cwdFile := filepath.Join(cwd, ".tridos.json")
 		if _, err := os.Stat(cwdFile); err == nil {
