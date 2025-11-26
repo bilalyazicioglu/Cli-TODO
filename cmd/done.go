@@ -1,4 +1,3 @@
-// TODO maddelerini tamamlandı olarak işaretlemek için `done` komutu.
 package cmd
 
 import (
@@ -25,7 +24,7 @@ func donerun(cmd *cobra.Command, args []string) {
 	if err != nil {
 		log.Fatalln(args[0], "is not a valid label", err)
 	}
-	if i > 0 && i < len(items) {
+	if i > 0 && i <= len(items) {
 		items[i-1].Done = true
 		fmt.Printf("%q %v\n", items[i-1].Text, "marked as done")
 
