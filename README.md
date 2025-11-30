@@ -19,23 +19,27 @@ go install ./...
 Yeni iş ekleme:
 
 ```bash
-tdo add "alışveriş yap"
+./tdo add "alışveriş yap"
 # öncelik vererek
-tdo add -p 1 "önemli iş"
+./tdo add -p 1 "önemli iş"
 ```
 
 Listeleme:
 
 ```bash
-tdo list          # yalnızca tamamlanmamışlar
-tdo list --done   # yalnızca tamamlanmışlar
-tdo list --all    # hepsi
+./tdo list          # yalnızca tamamlanmamışlar
+./tdo list --done   # yalnızca tamamlanmışlar
+./tdo list --all    # hepsi
 ```
 
 Bir işi tamamlandı işaretleme:
 
 ```bash
-tdo done 1
+./tdo done 1
+```
+Bir işi silme:
+```bash
+./tdo delete 1
 ```
 
 ## Veri Dosyası
