@@ -1,6 +1,6 @@
 # Cli-TODO
 
-Basit bir komut satırı TODO yöneticisi. Görev ekleyebilir, listeleyebilir ve tamamlandı olarak işaretleyebilirsin.
+Basit bir komut satırı TODO yöneticisi. Görev ekleyebilir, listeleyebilir, silebilir ve tamamlandı olarak işaretleyebilirsin.
 
 ## Kurulum
 
