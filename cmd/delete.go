@@ -15,16 +15,11 @@ import (
 var deleteCmd = &cobra.Command{
 	Use:   "delete",
 	Short: "delete that shi",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
-	Run: delete,
+	Long:  `Delete an existing note.`,
+	Run:   deleteRun,
 }
 
-func delete(cmd *cobra.Command, args []string) {
+func deleteRun(cmd *cobra.Command, args []string) {
 	if len(args) != 1 {
 		log.Fatalln("Silinecek notun dizinini (indeksini) belirtmelisiniz.")
 	}

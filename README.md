@@ -1,6 +1,6 @@
 # Cli-TODO
 
-Basit bir komut satırı TODO yöneticisi. Görev ekleyebilir, listeleyebilir, silebilir ve tamamlandı olarak işaretleyebilirsin.
+Basit bir komut satırı TODO yöneticisi. Görev ekleyebilir, listeleyebilir, silebilir, düzenleyebilir ve tamamlandı olarak işaretleyebilirsin.
 
 ## Kurulum
 
@@ -16,7 +16,7 @@ go install ./...
 
 ## Kullanım
 
-Yeni iş ekleme:
+Yeni Not Ekleme:
 
 ```bash
 ./tdo add "alışveriş yap"
@@ -24,20 +24,24 @@ Yeni iş ekleme:
 ./tdo add -p 1 "önemli iş"
 ```
 
-Listeleme:
+Notları Listeleme:
 
 ```bash
 ./tdo list          # yalnızca tamamlanmamışlar
 ./tdo list --done   # yalnızca tamamlanmışlar
 ./tdo list --all    # hepsi
 ```
+Notları Düzenleme:
+```bash
+./tdo edit 1 "new text"
+```
 
-Bir işi tamamlandı işaretleme:
+Notları Tamamlandı işaretleme:
 
 ```bash
 ./tdo done 1
 ```
-Bir işi silme:
+Notları Silme:
 ```bash
 ./tdo delete 1
 ```
@@ -50,3 +54,6 @@ Ev dizinindeki dosya kullanılır, ancak çalıştığın dizinde `.tridos.json`
 ## Lisans
 
 Bu proje MIT lisansı ile lisanslanmıştır. Ayrıntılar için `LICENSE` dosyasına bak.
+
+## Info
+Bu proje Bilal Yazıcıoğlu tarafından yapılmış ve github'a atılmıştır.
