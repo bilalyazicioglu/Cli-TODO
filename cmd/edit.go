@@ -12,7 +12,7 @@ import (
 	"strings"
 )
 
-//editCmd represents the edit command
+// editCmd represents the edit command
 var editCmd = &cobra.Command{
 	Use:   "edit",
 	Short: "Editing the existing note",
@@ -47,7 +47,6 @@ func editRun(cmd *cobra.Command, args []string) {
 
 	newPriority := oldPriority
 	if cmd.Flags().Changed("priority") {
-		// 'editPriority' global değişkeni, init() fonksiyonunda tanımlanan flag'in değerini tutar.
 		items[itemIndex].SetPriority(priority)
 		newPriority = priority
 	}
